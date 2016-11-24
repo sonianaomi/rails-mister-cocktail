@@ -1,0 +1,23 @@
+<h1>Cocktails</h1>
+
+<div class="box-gray-line">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cocktails.each do |cocktail| %>
+        <tr>
+          <td><%= cocktail.name %></td>
+          <td class="text-center"><%= link_to 'Show', cocktail, class: 'btn btn-sm btn-default' %>
+          <%= link_to 'Edit', edit_cocktail_path(cocktail), class: 'btn btn-sm btn-primary' %>
+          <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
