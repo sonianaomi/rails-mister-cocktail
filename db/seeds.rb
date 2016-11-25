@@ -10,3 +10,17 @@ drinks.each do |ingredient|
     name: ingredient["strIngredient1"]
   )
 end
+
+10.times do
+  cocktail = Cocktail.create(name: Faker::Beer.name )
+end
+
+range = (0...10).to_a
+
+10.times do
+  cocktail = Dose.create(
+    description: Faker::Beer.alcohol,
+    cocktail_id: range.sample,
+    ingredient_id: range.sample
+  )
+end
