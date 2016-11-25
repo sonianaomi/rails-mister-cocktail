@@ -1,5 +1,10 @@
   <div class="col-sm-6 col-sm-offset-3">
     <h1><%= @cocktail.name %></h1>
+    <% if @cocktail.photo.url %>
+      <%= image_tag @cocktail.photo.url(:standard) %>
+    <% else %>
+      <div class="noimage text-center">Image</div>
+    <% end %>
 
     <table class="table table-striped">
       <tbody>

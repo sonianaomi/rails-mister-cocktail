@@ -4,7 +4,8 @@
 
   <table class="table table-striped">
     <thead>
-      <tr class="click">
+      <tr>
+        <th></th>
         <th>Name</th>
         <th></th>
       </tr>
@@ -13,6 +14,13 @@
     <tbody>
       <% @cocktails.each do |cocktail| %>
         <tr>
+          <td>
+            <% if cocktail.photo.url %>
+              <%= image_tag cocktail.photo.url(:small) %>
+            <% else %>
+              <div class="noimage text-center">Image</div>
+            <% end %>
+          </td>
           <td><%= cocktail.name %></td>
           <td class="text-center"><%= link_to 'Show', cocktail, class: 'btn btn-sm btn-default' %>
           <%= link_to 'Edit', edit_cocktail_path(cocktail), class: 'btn btn-sm btn-primary' %>
