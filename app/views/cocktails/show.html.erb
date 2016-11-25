@@ -1,0 +1,16 @@
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1><%= @cocktail.name %></h1>
+
+    <div>
+      <%= link_to 'Edit', edit_cocktail_path(@cocktail), class: 'btn btn-primary' %>
+      <%= link_to 'Back', cocktails_path %>
+    </div>
+
+
+    <small>
+      <% @ingredients.each do |ingredient| %>
+        <span class="label label-default"> <%= ingredient.name %> </span>
+      <% end %>
+    </small>
+
+  </div>
