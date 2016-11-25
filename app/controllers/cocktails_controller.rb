@@ -6,7 +6,8 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @ingredients = Ingredient.all
+    @cocktail = Cocktail.find(params[:id])
+    @doses = @cocktail.doses
   end
 
   def new

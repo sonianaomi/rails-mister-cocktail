@@ -1,0 +1,10 @@
+<h1>New</h1>
+
+<%= simple_form_for([@cocktail, @dose]) do |f| %>
+  <%= f.input :description, placeholder: "Unidade" %>
+  <%= f.input :ingredient_id, collection: @ingredients %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
+<% end %>
+
+
+<%= link_to 'Back', cocktail_path(@cocktail) %>
